@@ -61,7 +61,7 @@ async function handleMessage(port: any, raw: unknown, session: any, mission: str
 async function main() {
   try {
     const { provider, id } = parseModel(model);
-    const resolvedModel = services.modelRegistry.find(provider, id);
+    const resolvedModel = (services as any).modelRegistry.find(provider, id);
     if (!resolvedModel) throw new Error(`Model not found: ${model}`);
     const { session } = await createAgentSessionFromServices({
       services,

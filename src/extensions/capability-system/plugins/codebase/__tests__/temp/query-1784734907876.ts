@@ -1,0 +1,4 @@
+
+function fooBar() {}
+function baz() {}
+    
